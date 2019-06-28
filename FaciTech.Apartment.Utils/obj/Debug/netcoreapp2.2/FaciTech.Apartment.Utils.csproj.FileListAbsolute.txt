@@ -1,0 +1,8 @@
+D:\Users\belma\source\repos\FaciTech\FaciTech.Apartment.Utils\bin\Debug\netcoreapp2.2\FaciTech.Apartment.Utils.deps.json
+D:\Users\belma\source\repos\FaciTech\FaciTech.Apartment.Utils\bin\Debug\netcoreapp2.2\FaciTech.Apartment.Utils.dll
+D:\Users\belma\source\repos\FaciTech\FaciTech.Apartment.Utils\bin\Debug\netcoreapp2.2\FaciTech.Apartment.Utils.pdb
+D:\Users\belma\source\repos\FaciTech\FaciTech.Apartment.Utils\obj\Debug\netcoreapp2.2\FaciTech.Apartment.Utils.csproj.CoreCompileInputs.cache
+D:\Users\belma\source\repos\FaciTech\FaciTech.Apartment.Utils\obj\Debug\netcoreapp2.2\FaciTech.Apartment.Utils.AssemblyInfoInputs.cache
+D:\Users\belma\source\repos\FaciTech\FaciTech.Apartment.Utils\obj\Debug\netcoreapp2.2\FaciTech.Apartment.Utils.AssemblyInfo.cs
+D:\Users\belma\source\repos\FaciTech\FaciTech.Apartment.Utils\obj\Debug\netcoreapp2.2\FaciTech.Apartment.Utils.dll
+D:\Users\belma\source\repos\FaciTech\FaciTech.Apartment.Utils\obj\Debug\netcoreapp2.2\FaciTech.Apartment.Utils.pdb

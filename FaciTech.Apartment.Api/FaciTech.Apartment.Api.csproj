@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FaciTech.Apartment.BL\FaciTech.Apartment.BL.csproj" />
     <ProjectReference Include="..\FaciTech.Apartment.Database\FaciTech.Apartment.Database.csproj" />
+    <ProjectReference Include="..\FaciTech.Apartment.Utils\FaciTech.Apartment.Utils.csproj" />
   </ItemGroup>
 
 </Project>
