@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/FaciTech.Apartment/v15/Server/sqlite3
+/FaciTech.Apartment.Api/obj
+/FaciTech.Apartment.BL/bin/Debug/netcoreapp2.2
+/FaciTech.Apartment.BL/obj
+/FaciTech.Apartment.Database/bin/Debug
+/FaciTech.Apartment.Database/obj
