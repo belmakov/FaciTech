@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Association Info</mat-card-title>
+  </mat-card-header>
+  <mat-card-content [formGroup]="associationInfoForm">
+    <mat-grid-list cols="3" rowHeight="{{rowHeight}}">
+      <mat-grid-tile colspan=2 rowspan=1>
+        <mat-form-field class="column-2">
+          <input matInput placeholder="Association Name" formControlName="name" required maxlength="100">
+          <mat-error *ngIf="associationInfoForm.get('name').hasError('required')">
+            Association Name is a required, please specify association name.
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan=1 rowspan=1>
+        <mat-form-field class="column-2">
+          <input matInput placeholder="Association Number" formControlName="number" maxlength="25">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan=2 rowspan=1>
+        <mat-form-field class="column-2">
+          <input matInput placeholder="Bank Name"  formControlName="bankName" maxlength="100">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan=1 rowspan=1>
+        <mat-form-field class="column-2">
+          <input matInput placeholder="Account Number" formControlName="bankAccountNumber" maxlength="25" style="vertical-align:top">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan=1 rowspan=1>
+        <mat-form-field class="column-4">
+          <input matInput placeholder="IFSC" formControlName="ifsc" maxlength="25" />
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="3" rowHeight="{{textAreaHeight}}">
+      <mat-grid-tile colspan=1 rowspan=1>
+        <mat-form-field class="column-4">
+          <textarea matInput placeholder="Branch Address" rows="5" formControlName="bankBranchAddress" maxlength="500"></textarea>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" [disabled]="!associationInfoForm.valid" (click)="onSaveClick()">Save</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,40 @@
+.app-toolbar {
+  z-index: 2; /* Ensure that your app's content doesn't overlap the toolbar */
+  position: sticky;
+  top: 0;
+}
+
+
+
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.sidenav {
+  top: 55px !important;
+  min-width: 250px;
+}
+.logo-text {
+  font-size:20px;
+  color:beige;
+}
+.logo-img {
+  padding-left:5px;
+  width:35px;
+  height:30px;
+}
+.nav-section {
+  display: block;
+  padding-left: 12px;
+  font-size: 1.25em;
+}
+.sidenav-container {
+  top: 55px !important;
+}
+h6 {
+  font-size: 1.15rem;
+  line-height: 110%;
+  margin: 0.7666666667rem 0 0.46rem 0;
+}

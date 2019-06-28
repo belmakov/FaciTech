@@ -1,0 +1,45 @@
+
+<mat-tab-group>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="tab-title"><mat-icon color="primary">location_city</mat-icon></div>
+    
+      BASIC INFO
+    </ng-template>
+    <div class="tab-content">
+      <app-community-setup-basic [basicInfo]="basicInfo" (saved)="onBasicInfoSave($event)"></app-community-setup-basic>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="tab-title"><mat-icon color="primary">people</mat-icon></div>
+      ASSOCIATION INFO
+    </ng-template>
+    <div class="tab-content" style="width:800px;">
+      <app-association-info></app-association-info>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="tab-title"><mat-icon>domain</mat-icon></div>
+      BUILDING
+    </ng-template>
+    <div style="padding-left:10px">Content 2</div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="tab-title"><mat-icon>pool</mat-icon></div>
+      AMENITIES
+    </ng-template>
+    <div>Content 2</div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="tab-title">
+        <mat-icon class="example-tab-icon">group_work</mat-icon>
+      </div>
+      UNIT
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";*/
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/*@import "m-modified.css";*/
+html {
+  line-height: 1.0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+}
+body {
+  margin: 0;
+}
+h6 {
+  font-size: 1.15rem;
+  line-height: 110%;
+  margin: 0.7666666667rem 0 0.46rem 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: 1.3;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-button {
+  width: 8px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
+  border: thin solid lightgray;
+  box-shadow: 0px 0px 3px #dfdfdf inset;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border: thin solid gray;
+  border-radius: 10px;
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7d7d7d;
+  }
+
+.column-2 {
+  min-width:94% !important
+}
+.column-4 {
+  min-width: 88% !important
+}
+
+/*mat-grid-tile {
+  background: lightblue;
+}*/
+
+
+::-moz-scrollbar {
+  width: 8px;
+}
+
+::-moz-scrollbar-button {
+  width: 8px;
+  height: 5px;
+}
+
+::-moz-scrollbar-track {
+  background: #eee;
+  border: thin solid lightgray;
+  box-shadow: 0px 0px 3px #dfdfdf inset;
+  border-radius: 10px;
+}
+
+::-moz-scrollbar-thumb {
+  background: #999;
+  border: thin solid gray;
+  border-radius: 10px;
+}
+
+  ::-moz-scrollbar-thumb:hover {
+    background: #7d7d7d;
+  }

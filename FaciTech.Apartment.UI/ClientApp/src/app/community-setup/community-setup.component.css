@@ -1,0 +1,17 @@
+.tab-content {
+  padding: 40px 50px 50px 40px;
+  margin: 10px 10px 10px 10px;
+}
+.tab-title {
+  padding-right:5px;
+}
+.mat-grid-list {
+  height:10px;
+}
+.mat-form-field {
+  padding-right: 30px !important;
+  min-width: 100%;
+}
+.mat-card-content {
+  padding-left:18px;
+}

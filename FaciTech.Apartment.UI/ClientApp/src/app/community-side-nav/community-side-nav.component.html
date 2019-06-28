@@ -1,0 +1,55 @@
+<mat-toolbar class="mat-elevation-z6 app-toolbar" color="primary">
+  <button type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="sidenav.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <span class="logo-text">FaciTech</span>
+  <img src="assets/logo1.png" class="logo-img">
+  <span class="example-fill-remaining-space"></span>
+  <button mat-icon-button>
+    <mat-icon matBadge="15" matBadgeColor="accent">notifications</mat-icon>
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>person</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Change Password</button>
+    <button mat-menu-item>Sign Out</button>
+  </mat-menu>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container" fullscreen>
+  <mat-sidenav #sidenav
+               [opened]="!small"
+               class="sidenav mat-elevation-z8"
+               fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'">
+    <mat-nav-list>
+      <a class="sidenavelement" routerLink="/" mat-list-item href="#"><mat-icon color="primary">dashboard</mat-icon> &nbsp; Dashboard</a>
+      <mat-divider></mat-divider>
+      <div>
+        <h6 class="nav-section">Community</h6>
+      </div>
+
+      <a class="sidenavelement" routerLink="/community-setup" mat-list-item href="#"><mat-icon >domain</mat-icon> &nbsp; Setup</a>
+      <a class="sidenavelement" routerLink="/people" mat-list-item href="#"><mat-icon color="primary">people_outline</mat-icon> &nbsp; People</a>
+      <a class="sidenavelement" routerLink="/association" mat-list-item href="#"><mat-icon color="primary">people</mat-icon> &nbsp; Association</a>
+      <a class="sidenavelement" routerLink="/vendors" mat-list-item href="#"><mat-icon color="primary">transfer_within_a_station</mat-icon> &nbsp; Vendors</a>
+      <mat-divider></mat-divider>
+      <div>
+        <h6 class="nav-section">Other</h6>
+      </div>
+      <a class="sidenavelement" routerLinkActive="active-link" routerLink="/typo" mat-list-item href="#"><mat-icon color="primary">attach_money</mat-icon> &nbsp; Expense</a>
+      <a class="sidenavelement" routerLinkActive="active-link" routerLink="/user" mat-list-item href="#"><mat-icon color="primary">list_alt</mat-icon> &nbsp; Maintenance</a>
+      <a class="sidenavelement" routerLinkActive="active-link" routerLink="/table" mat-list-item href="#"><mat-icon color="primary">info</mat-icon> &nbsp; Noticeboard</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content >
+    <div style="padding:20px 50px 50px 20px">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
