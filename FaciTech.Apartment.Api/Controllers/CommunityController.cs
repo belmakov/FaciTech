@@ -5,6 +5,7 @@ using FaciTech.Apartment.Database;
 using FaciTech.Apartment.Database.Models;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -32,10 +33,10 @@ namespace FaciTech.Apartment.Api.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public JsonResult Get(int id)
+        public JsonResult Get(Guid id)
         {
             var communityLocation = _faciTechDbContext.CommunityLocation.Where(e => e.Id == id).FirstOrDefault();
-            var locationDto = _locationService.GetChildLocations(communityLocation.CountryId, communityLocation.CityId, communityLocation.AreaId);
+            var locationDto = _locationService.GetChildLocations(communityLocation.CountryId, communityLocation.StateId, communityLocation.CityId, communityLocation.AreaId);
             CommunityViewModel communityViewModel = new CommunityViewModel(communityLocation,locationDto);
             return Json(communityViewModel);
         }
@@ -49,7 +50,7 @@ namespace FaciTech.Apartment.Api.Controllers
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]BasicInfoViewModel basicInfo)
+        public void Put(Guid id, [FromBody]BasicInfoViewModel basicInfo)
         {
             var community = _faciTechDbContext.Community.Where(e => e.Id == id).FirstOrDefault();
 
@@ -64,7 +65,7 @@ namespace FaciTech.Apartment.Api.Controllers
             _faciTechDbContext.SaveChanges();
         }
         [HttpPut("{id}/association")]
-        public void Put(int id, [FromBody]WelfareAssociation welfareAssociation)
+        public void Put(Guid id, [FromBody]WelfareAssociation welfareAssociation)
         {
             var community = _faciTechDbContext.Community.Where(e => e.Id == id).FirstOrDefault();
             community.AssociationName = welfareAssociation.Name;

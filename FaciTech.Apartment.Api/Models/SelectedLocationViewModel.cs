@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace FaciTech.Apartment.Api.Models
 {
@@ -12,10 +13,10 @@ namespace FaciTech.Apartment.Api.Models
         public List<LocationViewModel> Cities { get; set; }
         public List<LocationViewModel> Areas { get; set; }
         public List<LocationViewModel> SubAeras { get; set; }
-        public string CountryId { get; set; }
-        public string CityId { get; set; }
-        public string AreaId { get; set; }
-        public string SubAreaId { get; set; }
+        public Guid CountryId { get; set; }
+        public Guid CityId { get; set; }
+        public Guid AreaId { get; set; }
+        public Guid SubAreaId { get; set; }
         
     }
 }

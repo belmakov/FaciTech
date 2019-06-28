@@ -2,6 +2,7 @@
 using FaciTech.Apartment.Database;
 using FaciTech.Apartment.Database.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,15 +19,19 @@ namespace FaciTech.Apartment.BL
         {
             return await _faciTechDbContext.Country.ToListAsync();
         }
-        public async Task<List<City>> GetCitiesByCountryIdAsync(int countryId)
+        public async Task<List<State>> GetStatesByCountryIdAsync(Guid countryId)
         {
-            return await _faciTechDbContext.City.Where(e => e.CountryId == countryId).ToListAsync();
+            return await _faciTechDbContext.State.Where(e => e.CountryId == countryId).ToListAsync();
         }
-        public async Task<List<Area>> GetAreasByCityIdAsync(int cityId)
+        public async Task<List<City>> GetCitiesByStateIdAsync(Guid stateId)
+        {
+            return await _faciTechDbContext.City.Where(e => e.StateId == stateId).ToListAsync();
+        }
+        public async Task<List<Area>> GetAreasByCityIdAsync(Guid cityId)
         {
             return await _faciTechDbContext.Area.Where(e => e.CityId == cityId).ToListAsync();
         }
-        public async Task<List<SubArea>> GetSubAreasByAreaIdAsync(int areaId)
+        public async Task<List<SubArea>> GetSubAreasByAreaIdAsync(Guid areaId)
         {
             return await _faciTechDbContext.SubArea.Where(e => e.AreaId == areaId).ToListAsync();
         }
@@ -34,26 +39,31 @@ namespace FaciTech.Apartment.BL
         {
             return GetCountriesAsync().Result();
         }
-        public List<City> GetCitiesByCountryId(int countryId)
+        public List<State> GetStatesByCountryId(Guid countryId)
         {
-            return GetCitiesByCountryIdAsync(countryId).Result();
+            return GetStatesByCountryIdAsync(countryId).Result();
         }
-        public List<Area> GetAreasByCityId(int cityId)
+        public List<City> GetCitiesByStateId(Guid stateId)
+        {
+            return GetCitiesByStateIdAsync(stateId).Result();
+        }
+        public List<Area> GetAreasByCityId(Guid cityId)
         {
             return GetAreasByCityIdAsync(cityId).Result();
         }
-        public List<SubArea> GetSubAreasByAreaId(int areaId)
+        public List<SubArea> GetSubAreasByAreaId(Guid areaId)
         {
             return GetSubAreasByAreaIdAsync(areaId).Result();
         }
-        public LocationDto GetChildLocations(int countryId, int cityId, int areaId)
+        public LocationDto GetChildLocations(Guid countryId, Guid stateId, Guid cityId, Guid areaId)
         {
             var countriesTask = this.GetCountriesAsync();
-            var citiesTask = this.GetCitiesByCountryIdAsync(countryId);
+            var statesTask = this.GetStatesByCountryIdAsync(countryId);
+            var citiesTask = this.GetCitiesByStateIdAsync(stateId);
             var areasTask = this.GetAreasByCityIdAsync(cityId);
             var subareaTask = this.GetSubAreasByAreaIdAsync(areaId);
 
-            Task.WaitAll(countriesTask, citiesTask, areasTask, subareaTask);
+            Task.WaitAll(countriesTask, statesTask, citiesTask, areasTask, subareaTask);
 
             LocationDto locationDto = new LocationDto();
             locationDto.Countries = countriesTask.Result;

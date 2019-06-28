@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace FaciTech.Apartment.Database.Models
 {
-    public class City
+    public class RoleFeature
     {
-        [Required]
-        public Guid Id { get; set; }
         public String Comments { get; set; }
         [Required]
         public Boolean Inactive { get; set; }
@@ -19,14 +18,11 @@ namespace FaciTech.Apartment.Database.Models
         public Guid UpdatedBy { get; set; }
         [Required]
         public DateTime Updated { get; set; }
-        [Required]
-        public String Name { get; set; }
-        [Required]
-        public Guid StateId { get; set; }
-        [Required]
-        public State State { get; set; }
-        //Refactor to refer Country
 
-        public ICollection<Area> Areas { get; set; }
+        public Guid RoleId { get; set; }
+        public Role Role { get; set; }
+
+        public Guid FeatureId { get; set; }
+        public Feature Feature { get; set; }
     }
 }

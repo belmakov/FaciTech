@@ -20,7 +20,7 @@ namespace FaciTech.Apartment.Api.Controllers
         }
         [EnableQuery]
         [HttpGet("/api/areas/{areaId:int}/[controller]")]
-        public ActionResult<IQueryable<LocationViewModel>> GetAll(int areaId)
+        public ActionResult<IQueryable<LocationViewModel>> GetAll(Guid areaId)
         {
             LocationService locationService = new LocationService(_faciTechDbContext);
             try

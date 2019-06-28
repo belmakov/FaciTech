@@ -43,10 +43,10 @@ namespace FaciTech.Apartment.Api.Models
             selectedLocationViewModel.Cities = LocationViewModel.Map(locationDto.Cities);
             selectedLocationViewModel.Areas = LocationViewModel.Map(locationDto.Areas);
             selectedLocationViewModel.SubAeras = LocationViewModel.Map(locationDto.SubAreas);
-            selectedLocationViewModel.CountryId = communityLocation.CountryId.ToString();
-            selectedLocationViewModel.CityId = communityLocation.CityId.ToString();
-            selectedLocationViewModel.AreaId = communityLocation.AreaId.ToString();
-            selectedLocationViewModel.SubAreaId = communityLocation.SubAreaId.ToString();
+            selectedLocationViewModel.CountryId = communityLocation.CountryId;
+            selectedLocationViewModel.CityId = communityLocation.CityId;
+            selectedLocationViewModel.AreaId = communityLocation.AreaId;
+            selectedLocationViewModel.SubAreaId = communityLocation.SubAreaId;
             return selectedLocationViewModel;
         }
     }

@@ -20,12 +20,12 @@ namespace FaciTech.Apartment.Api.Controllers
         }
         [EnableQuery]
         [HttpGet("/api/countries/{countryId:int}/[controller]")]
-        public ActionResult<IQueryable<LocationViewModel>> GetAll(int countryId)
+        public ActionResult<IQueryable<LocationViewModel>> GetAll(Guid stateId)
         {
             LocationService locationService = new LocationService(_faciTechDbContext);
             try
             {
-                var response = _faciTechDbContext.City.Where(e => e.CountryId == countryId)
+                var response = _faciTechDbContext.City.Where(e => e.StateId == stateId)
                     .Select(e => new LocationViewModel()
                     {
                         Id = e.Id.ToString(),
